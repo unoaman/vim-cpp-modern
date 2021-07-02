@@ -71,14 +71,17 @@ name. For more details see `:help packages`.
 ## My modifications over bfrg master branch
 
 I have added syntax highlight to highlight all UPPERCASE words with underscores to be highlighted as Statement
+
 (see ~/.vim/pack/git-plugins/start/vim-cpp-modern/after/syntax/c.vim)
 
+```code
 "custom syntax highlighting
 syn match allMacroAndEnums "\v\w@<!(\u|_+[A-Z0-9])[A-Z0-9_]*\w@!"
 hi def link allMacroAndEnums Statement
-
+```
 ## my vimrc
 
+```vim
 "Disable function highlighting (affects both C and C++ files)
 "let g:cpp_no_function_highlight = 1
 
@@ -90,7 +93,7 @@ let g:cpp_member_highlight = 1
 
 " Put all standard C and C++ keywords under Vim's highlight group 'Statement' (affects both C and C++ files)
 let g:cpp_simple_highlight = 1
-
+```
 
 ## License
 
