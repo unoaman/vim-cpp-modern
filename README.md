@@ -61,11 +61,35 @@ The last option changes the highlighting of the following keywords:
 ## Installation
 
 ```bash
+$ mkdir -p ~/.vim/pack/git-plugins/start
 $ cd ~/.vim/pack/git-plugins/start
-$ git clone --depth=1 https://github.com/bfrg/vim-cpp-modern
+$ git clone --depth=1 https://github.com/unoaman/vim-cpp-modern
 ```
 **Note:** The directory name `git-plugins` is arbitrary, you can pick any other
 name. For more details see `:help packages`.
+
+## My modifications over bfrg master branch
+
+I have added syntax highlight to highlight all UPPERCASE words with underscores to be highlighted as Statement
+(see ~/.vim/pack/git-plugins/start/vim-cpp-modern/after/syntax/c.vim)
+
+"custom syntax highlighting
+syn match allMacroAndEnums "\v\w@<!(\u|_+[A-Z0-9])[A-Z0-9_]*\w@!"
+hi def link allMacroAndEnums Statement
+
+## my vimrc
+
+"Disable function highlighting (affects both C and C++ files)
+"let g:cpp_no_function_highlight = 1
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+"Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement' (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
 
 
 ## License
