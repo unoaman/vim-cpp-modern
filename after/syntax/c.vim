@@ -60,3 +60,7 @@ if get(g:, 'cpp_simple_highlight', 0)
     hi! def link cTypedef      Statement
     hi! def link cLabel        Statement
 endif
+
+"custom syntax highlighting
+syn match allMacroAndEnums "\v\w@<!(\u|_+[A-Z0-9])[A-Z0-9_]*\w@!"
+hi def link allMacroAndEnums Statement
